@@ -1,7 +1,7 @@
 *** Settings ***
 Library         SeleniumLibrary
-Library         JSONLibrary
 Library         Collections
+Library         OperatingSystem
 
 
 #Keywords
@@ -13,13 +13,13 @@ Resource        ./Pages/LoginPage/LoginLocators.resource
 Resource        ./Pages/InventoryPage/InventoryLocators.resource
 
 *** Variables ***
-${URL}         https://www.saucedemo.com/v1/
+${URL}         https://www.saucedemo.com/
 ${BROWSER}     Edge
 
 
 
 
-${CredentialsJson}             Resources/Settings/credentials.json
+${CredentialsJson}             Automation/Resources/Settings/credentials.json
 
 
 *** Keywords ***

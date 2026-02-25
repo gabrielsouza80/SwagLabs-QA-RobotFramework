@@ -3,10 +3,10 @@
 ## 🌐 Project Overview | Visão Geral do Projeto
 
 This project contains complete test documentation and automation for the site:  
-**https://www.saucedemo.com/v1/inventory.html**
+**https://www.saucedemo.com/**
 
 Este projeto contém a documentação completa de testes e automação para o site:  
-**https://www.saucedemo.com/v1/inventory.html**
+**https://www.saucedemo.com/**
 
 We aim to provide a clear and structured testing process, from planning to execution.  
 Nosso objetivo é fornecer um processo de teste claro e estruturado, do planejamento à execução.
@@ -43,6 +43,18 @@ Cada fase incluirá:
   🔍 Validação com base na documentação  
 - 📈 Execution reports  
   📈 Relatórios de execução
+
+Current automated coverage includes:  
+Cobertura atual de automação inclui:
+
+- ✅ Login positive and negative scenarios (required fields, invalid credentials, locked user)  
+  ✅ Cenários positivos e negativos de login (campos obrigatórios, credenciais inválidas, usuário bloqueado)
+- ✅ Session and route protection validation (logout, unauthorized checkout access)  
+  ✅ Validação de sessão e proteção de rotas (logout, acesso indevido ao checkout)
+- ✅ Cart and checkout E2E flow (add items, cart badge, subtotal validation, purchase completion)  
+  ✅ Fluxo E2E de carrinho e checkout (adicionar itens, badge do carrinho, validação de subtotal e finalização da compra)
+- ✅ Inventory behavior validation (sorting A-Z)  
+  ✅ Validação de comportamento do inventário (ordenação A-Z)
 
 ---
 

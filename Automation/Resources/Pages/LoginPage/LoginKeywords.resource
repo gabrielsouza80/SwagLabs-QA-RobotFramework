@@ -8,8 +8,9 @@ ${CredentialsJson}    ../Settings/credentials.json
 Login with credentials
     [Arguments]    ${role}
 
-    # Carrega o arquivo JSON contendo as credenciais (variável ${CredentialsJson} deve conter o caminho do arquivo)
-    ${credentials}=    Load JSON From File    ${CredentialsJson}
+    # Carrega o arquivo JSON contendo as credenciais
+    ${credentials_json}=    Get File    ${CredentialsJson}
+    ${credentials}=    Evaluate    json.loads(r'''${credentials_json}''')    modules=json
 
     # Pega a lista "users" do JSON
     ${users}=    Get From Dictionary    ${credentials}    users
@@ -25,7 +26,9 @@ Login with credentials
     END                                                                                                         # Marca o fim do loop FOR
 
     # Se não encontrou nenhum usuário com o role informado, falha o teste com mensagem clara
-    Run Keyword Unless    ${user_dictionary}    Fail    No user found with role "${role}"                       # Se ${user_dictionary} estiver vazio (nenhum usuário encontrado), falha o teste com uma mensagem explicativa
+    IF    not ${user_dictionary}
+        Fail    No user found with role "${role}"
+    END
 
 
     # Extrai username e password do dicionário encontrado
@@ -58,7 +61,7 @@ Username and password with 255 characters
     [Tags]    TC11
     ${long_username}=    Evaluate    'a'*255
     ${long_password}=    Evaluate    'b'*255
-    [Return]    ${long_username}    ${long_password}
+    RETURN    ${long_username}    ${long_password}
 
 Click Login
     Click Button    ${LOGIN_BUTTON}
