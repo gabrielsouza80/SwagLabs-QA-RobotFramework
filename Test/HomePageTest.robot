@@ -5,39 +5,39 @@ Test Setup                        Prepare HomePage test case
 Suite Teardown                    Close the login page
 
 *** Test Cases ***
-HP01 - HomePage carrega com componentes principais
-    [Documentation]    Valida carregamento da HomePage com elementos essenciais
+HP01 - HomePage loads with main components
+    [Documentation]    Validates HomePage load with essential elements
     [Tags]    homepage    smoke
     Validate HomePage loaded
     Validate HomePage title text    ${HOMEPAGE_TEST_DATA}[expected_title]
     Validate HomePage logo text    ${HOMEPAGE_TEST_DATA}[expected_logo]
     Validate HomePage social links
 
-HP02 - HomePage abre e fecha menu lateral
-    [Documentation]    Valida a interação de abrir e fechar menu na HomePage
+HP02 - HomePage opens and closes side menu
+    [Documentation]    Validates side menu open/close interaction on HomePage
     [Tags]    homepage    interaction
     Validate HomePage loaded
     Open HomePage side menu
     Validate HomePage side menu options
     Close HomePage side menu
 
-HP03 - HomePage ordena produtos de Z-A
-    [Documentation]    Valida troca da ordenação para Name (Z to A)
+HP03 - HomePage sorts products from Z to A
+    [Documentation]    Validates sorting change to Name (Z to A)
     [Tags]    homepage    sorting
     Validate HomePage loaded
     Sort HomePage products by    ${HOMEPAGE_TEST_DATA}[sort_za_value]
     Validate active sort option    ${HOMEPAGE_TEST_DATA}[sort_za_label]
 
-HP04 - HomePage badge do carrinho com dois itens
-    [Documentation]    Adiciona dois itens e valida badge do carrinho
+HP04 - HomePage cart badge with two items
+    [Documentation]    Adds two items and validates cart badge
     [Tags]    homepage    cart
     Validate HomePage loaded
     Add backpack from HomePage
     Add bike light from HomePage
     Validate HomePage cart badge    ${HOMEPAGE_TEST_DATA}[expected_cart_badge]
 
-HP05 - HomePage logout pelo menu lateral
-    [Documentation]    Realiza logout a partir do menu lateral
+HP05 - HomePage logout through side menu
+    [Documentation]    Performs logout through side menu
     [Tags]    homepage    session
     Validate HomePage loaded
     Open HomePage side menu

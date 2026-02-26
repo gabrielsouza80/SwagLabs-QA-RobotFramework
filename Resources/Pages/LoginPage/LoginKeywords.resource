@@ -14,34 +14,34 @@ Login with credentials
     END
     Wait Until Element Is Visible    ${LOGIN_USERNAME_FIELD}    10s
 
-    # Carrega o arquivo JSON contendo as credenciais
+    # Loads the JSON file containing credentials
     ${credentials_json}=    Get File    ${CredentialsJson}
     ${credentials}=    Evaluate    json.loads(r'''${credentials_json}''')    modules=json
 
-    # Pega a lista "users" do JSON
+    # Gets the "users" list from JSON
     ${users}=    Get From Dictionary    ${credentials}    users
     
-    #variavel para armazenar o dicionário do usuário encontrado
+    # Variable used to store the matching user dictionary
     ${user_dictionary}=    Set Variable    ${None}
     
-    # Percorre a lista de usuários procurando aquele cujo campo "role" corresponde ao argumento ${role}
-    FOR    ${i}    IN    @{users}                                                                               # Inicia um loop, onde ${i} representa cada usuário (dicionário) da lista @{users}
-        ${user_role}=    Get From Dictionary    ${i}    role                                                    # Pega o valor da chave "role" dentro do dicionário atual (${i}) e armazena em ${user_role}
-        Run Keyword If    '${user_role}' == '${role}'    Set Test Variable    ${user_dictionary}    ${i}        # Se o "role" do usuário atual for igual ao argumento passado (${role}), guarda esse dicionário em ${user_dictionary}
-        Exit For Loop If    ${user_dictionary}                                                                  # Sai imediatamente do loop se ${user_dictionary} já estiver definido (ou seja, usuário encontrado)
-    END                                                                                                         # Marca o fim do loop FOR
+    # Loops through users and finds the one whose "role" matches ${role}
+    FOR    ${i}    IN    @{users}
+        ${user_role}=    Get From Dictionary    ${i}    role
+        Run Keyword If    '${user_role}' == '${role}'    Set Test Variable    ${user_dictionary}    ${i}
+        Exit For Loop If    ${user_dictionary}
+    END
 
-    # Se não encontrou nenhum usuário com o role informado, falha o teste com mensagem clara
+    # If no user matches the requested role, fail the test with a clear message
     IF    not ${user_dictionary}
         Fail    No user found with role "${role}"
     END
 
 
-    # Extrai username e password do dicionário encontrado
+    # Extracts username and password from the matched dictionary
     ${username}=    Get From Dictionary    ${user_dictionary}    username
     ${password}=    Get From Dictionary    ${user_dictionary}    password
 
-    # Preenche os campos de login e submete
+    # Fills login fields and submits
     Input Text    ${LOGIN_USERNAME_FIELD}    ${username}
     Input Text    ${LOGIN_PASSWORD_FIELD}    ${password}
     Click Button    ${LOGIN_BUTTON}
@@ -51,8 +51,8 @@ Check if you went to the expected page
     Page Should Contain Element    ${LocatorPageExpected}
 
 Check Message
-    [Arguments]    ${mensagem_esperada}
-    Page Should Contain    ${mensagem_esperada}    
+    [Arguments]    ${expected_message}
+    Page Should Contain    ${expected_message}
 
 Login with invalid credentials
     [Arguments]    ${username}    ${password}
@@ -62,7 +62,7 @@ Login with invalid credentials
 
 
 Username and password with 255 characters
-    [Documentation]    Gera username e password com 255 caracteres
+    [Documentation]    Generates username and password with 255 characters
     [Tags]    TC11
     [Arguments]    ${length}=255
     ${long_username}=    Evaluate    'a'*int(${length})

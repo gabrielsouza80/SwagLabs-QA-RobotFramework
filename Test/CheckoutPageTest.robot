@@ -5,8 +5,8 @@ Test Setup                        Prepare Checkout test case
 Suite Teardown                    Close the login page
 
 *** Test Cases ***
-CK01 - Cart page carrega com itens esperados
-    [Documentation]    Valida estrutura e itens da página de carrinho
+CK01 - Cart page loads with expected items
+    [Documentation]    Validates cart page structure and items
     [Tags]    checkout    cart
     ${expected_items}=    Set Variable    ${CHECKOUT_TEST_DATA}[expected_items]
     Prepare cart with two default items
@@ -14,15 +14,15 @@ CK01 - Cart page carrega com itens esperados
     Validate cart page loaded    ${CHECKOUT_TEST_DATA}[expected_titles][cart]
     Validate cart contains expected items    @{expected_items}
 
-CK02 - Checkout information page carrega corretamente
-    [Documentation]    Valida transição do carrinho para checkout your information
+CK02 - Checkout information page loads correctly
+    [Documentation]    Validates transition from cart to Checkout: Your Information
     [Tags]    checkout    info
     Prepare cart with two default items
     Open cart page
     Start checkout information step    ${CHECKOUT_TEST_DATA}[expected_titles][information]
 
-CK03 - Checkout overview valida subtotal, taxa e total
-    [Documentation]    Valida os valores exibidos no overview
+CK03 - Checkout overview validates subtotal, tax and total
+    [Documentation]    Validates totals shown in overview
     [Tags]    checkout    overview    total
     ${customer}=    Set Variable    ${CHECKOUT_TEST_DATA}[customer]
     ${totals}=    Set Variable    ${CHECKOUT_TEST_DATA}[expected_totals]
@@ -33,8 +33,8 @@ CK03 - Checkout overview valida subtotal, taxa e total
     Validate checkout overview loaded    ${CHECKOUT_TEST_DATA}[expected_titles][overview]
     Validate checkout totals    ${totals}[item_total]    ${totals}[tax]    ${totals}[total]
 
-CK04 - Checkout complete e retorno para produtos
-    [Documentation]    Finaliza pedido e volta para HomePage
+CK04 - Checkout complete and return to products
+    [Documentation]    Completes the order and returns to HomePage
     [Tags]    checkout    complete
     ${customer}=    Set Variable    ${CHECKOUT_TEST_DATA}[customer]
     ${complete}=    Set Variable    ${CHECKOUT_TEST_DATA}[complete]

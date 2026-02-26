@@ -1,15 +1,15 @@
 # SauceDemo QA Automation (Robot Framework)
 
-Projeto de automação E2E para https://www.saucedemo.com/ com arquitetura organizada por domínio, testes orientados a dados (JSON) e execução sequencial/paralela.
+E2E automation project for https://www.saucedemo.com/ with domain-based architecture, data-driven tests (JSON), and sequential/parallel execution.
 
-## Cobertura atual
+## Current Coverage
 
-- Login: cenários positivos/negativos, campos obrigatórios, usuário bloqueado e proteção de rota.
-- HomePage: validação de componentes principais, menu lateral, ordenação e badge do carrinho.
-- Components: validação de logo, carrinho, menu lateral e footer.
-- Checkout: fluxo completo de carrinho, information, overview e finalização.
+- Login: positive/negative scenarios, required fields, locked user, and route protection.
+- HomePage: validation of main components, side menu, sorting, and cart badge.
+- Components: validation of logo, cart icon, side menu, and footer.
+- Checkout: full flow for cart, information, overview, and completion.
 
-## Estrutura do projeto
+## Project Structure
 
 ```plaintext
 .
@@ -32,35 +32,35 @@ Projeto de automação E2E para https://www.saucedemo.com/ com arquitetura organ
 └── README.md
 ```
 
-## Instalação
+## Installation
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Execução dos testes
+## Test Execution
 
-Sequencial:
+Sequential:
 
 ```bash
 python -m robot -d results Test
 ```
 
-Paralelo (5 processos):
+Parallel (5 processes):
 
 ```bash
 python -m pabot --processes 5 --outputdir results Test
 ```
 
-Paralelo (8 processos):
+Parallel (8 processes):
 
 ```bash
 python -m pabot --processes 8 --outputdir results Test
 ```
 
-## Boas práticas adotadas
+## Adopted Best Practices
 
-- Separação por domínio (Login, HomePage, Components e Checkout).
-- Dados de teste externalizados em `Data/*.json`.
-- Screenshot somente em falha para reduzir ruído e custo de I/O.
-- Um único diretório de artefatos: `results/`.
+- Domain-based separation (Login, HomePage, Components, and Checkout).
+- Test data externalized in `Data/*.json`.
+- Screenshot only on failure to reduce noise and I/O cost.
+- Single artifacts directory: `results/`.
