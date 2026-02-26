@@ -17,4 +17,10 @@ TC09 – Validação de autenticação ? Usuário insere senha incorreta ... | PASS |
 ------------------------------------------------------------------------------
 TC11 – Validação de campos ? Usuário insere username e senha acima... | PASS |
 ------------------------------------------------------------------------------
-TC12 – Segurança do login ? Usuário erra a senha várias vezes segu... 
+TC12 – Segurança do login ? Usuário erra a senha várias vezes segu... | PASS |
+------------------------------------------------------------------------------
+TC13 – Validação de autenticação ? Usuário bloqueado não consegue ... | PASS |
+------------------------------------------------------------------------------
+TC14 – Login com usuário problemático :: Usuário problemático cons... | PASS |
+------------------------------------------------------------------------------
+TC15 – Login com usuário de performance :: Usuário com problema de... 
