@@ -20,6 +20,10 @@ Resource        ./Pages/CheckoutPage/CheckoutLocators.resource
 ${URL}         https://www.saucedemo.com/
 ${BROWSER}     Edge
 ${DataFolder}  Data
+${LOGIN_TEST_DATA}         ${None}
+${HOMEPAGE_TEST_DATA}      ${None}
+${COMPONENTS_TEST_DATA}    ${None}
+${CHECKOUT_TEST_DATA}      ${None}
 
 
 

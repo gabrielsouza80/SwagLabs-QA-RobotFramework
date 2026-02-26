@@ -1,0 +1,22 @@
+==============================================================================
+Test                                                                          
+==============================================================================
+Test.ComponentsTest                                                           
+==============================================================================
+CP01 – Componente App Logo :: Valida o componente da logo Swag Labs   | PASS |
+------------------------------------------------------------------------------
+CP02 – Componente ícone do carrinho :: Valida componente do ícone ... | PASS |
+------------------------------------------------------------------------------
+CP03 – Componente botão de menu :: Valida componente botão Open Menu  | PASS |
+------------------------------------------------------------------------------
+CP04 – Componente bm-menu e links laterais :: Valida estrutura do ... | PASS |
+------------------------------------------------------------------------------
+CP05 – Componente footer copy :: Valida componente de texto do rodapé | PASS |
+------------------------------------------------------------------------------
+Test.ComponentsTest                                                   | PASS |
+5 tests, 5 passed, 0 failed
+==============================================================================
+Test                                                                  | PASS |
+5 tests, 5 passed, 0 failed
+==============================================================================
+Output:  C:\Gabriel\projects\robot-framework\SwagLabs-QA-RobotFramework\results\pabot_results\1\output.xml

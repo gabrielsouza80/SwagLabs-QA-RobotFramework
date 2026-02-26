@@ -1,0 +1,20 @@
+==============================================================================
+Test                                                                          
+==============================================================================
+Test.LoginPageTest                                                            
+==============================================================================
+TC01 – Autenticação de usuário ? Usuário insere credenciais válida... | PASS |
+------------------------------------------------------------------------------
+TC10 – Validação de campos obrigatórios ? Usuário tenta logar sem ... | PASS |
+------------------------------------------------------------------------------
+TC10B – Validação de campos obrigatórios ? Usuário tenta logar sem... | PASS |
+------------------------------------------------------------------------------
+TC07 – Sessão de usuário ? Usuário realiza logout :: Teste de logout  | PASS |
+------------------------------------------------------------------------------
+TC08 – Validação de autenticação ? Usuário insere username inexist... | PASS |
+------------------------------------------------------------------------------
+TC09 – Validação de autenticação ? Usuário insere senha incorreta ... | PASS |
+------------------------------------------------------------------------------
+TC11 – Validação de campos ? Usuário insere username e senha acima... | PASS |
+------------------------------------------------------------------------------
+TC12 – Segurança do login ? Usuário erra a senha várias vezes segu... 
