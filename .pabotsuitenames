@@ -1,8 +1,0 @@
-datasources:ebea7587955850dc7fa34b2f421264324151aa94
-commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
-suitesfrom:no-suites-from-option
-file:fd80a2da9caa944c0061e1a5d79644d372f6a930
---suite Test.CheckoutPageTest
---suite Test.ComponentsTest
---suite Test.HomePageTest
---suite Test.LoginPageTest

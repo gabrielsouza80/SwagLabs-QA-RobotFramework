@@ -19,6 +19,7 @@ Resource        ./Pages/CheckoutPage/CheckoutLocators.resource
 *** Variables ***
 ${URL}         https://www.saucedemo.com/
 ${BROWSER}     Edge
+${HEADLESS}    ${True}
 ${DataFolder}  Data
 ${LOGIN_TEST_DATA}         ${None}
 ${HOMEPAGE_TEST_DATA}      ${None}
@@ -33,12 +34,20 @@ ${CredentialsJson}             Resources/Settings/credentials.json
 
 *** Keywords ***
 Go to Login Page
-    # Abre o navegador com os argumentos
-    Open Browser    ${URL}    ${BROWSER}    
+    IF    ${HEADLESS}
+        ${edge_options}=    Evaluate    sys.modules['selenium.webdriver'].EdgeOptions()    sys, selenium.webdriver
+        Call Method    ${edge_options}    add_argument    --headless
+        Call Method    ${edge_options}    add_argument    --disable-gpu
+        Call Method    ${edge_options}    add_argument    --window-size\=1920,1080
+        Create Webdriver    Edge    options=${edge_options}
+        Go To    ${URL}
+    ELSE
+        Open Browser    ${URL}    ${BROWSER}
+    END
 
     
 Close the login page
-    Run Keyword If Test Failed    Capture Page Screenshot
+    Run Keyword And Ignore Error    Run Keyword If Test Failed    Capture Page Screenshot
     Close Browser
 
 Load test data file

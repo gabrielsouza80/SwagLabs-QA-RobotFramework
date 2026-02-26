@@ -1,17 +1,60 @@
 # =============================
-# Robot Framework test artifacts
+# Python environment and cache
+# =============================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py,cover
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+pip-wheel-metadata/
+
+# =============================
+# Robot Framework / Pabot artifacts
 # =============================
 output.xml
 log.html
 report.html
 interactive_console_output.xml
+.pabotsuitenames
+pabot_results/
+.pabot_results/
+pabotlibport.txt
+robot_stdout.out
+robot_stderr.out
+**/robot_stdout.out
+**/robot_stderr.out
 
-# Generated result files (workspace root)
-results/*.png
-results/*.xml
-results/*.html
-results/*.txt
+# Generated result files
+results/**
+!results/.gitkeep
 
 # Selenium screenshots created during failures
 selenium-screenshot-*.png
-results/selenium-screenshot-*.png
+
+# =============================
+# IDE and editor files
+# =============================
+.idea/
+*.code-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# =============================
+# OS files
+# =============================
+.DS_Store
+Thumbs.db
+Desktop.ini

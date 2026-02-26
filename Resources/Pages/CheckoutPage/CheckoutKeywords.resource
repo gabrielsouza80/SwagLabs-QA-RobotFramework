@@ -3,12 +3,27 @@ Resource    ../../Base.resource
 
 *** Keywords ***
 Prepare cart with two default items
-    [Arguments]    ${role}=standard
-    Login with credentials    ${role}
-    Check if you went to the expected page    ${titleInventory}
+    Go To    ${URL}inventory.html
+    Reset app state from menu
     Wait Until Element Is Visible    ${CheckoutAddBackpack}    10s
+    Check if you went to the expected page    ${titleInventory}
     Click Element    ${CheckoutAddBackpack}
     Click Element    ${CheckoutAddBikeLight}
+
+Reset app state from menu
+    Click Element    ${HomePageMenuButton}
+    Wait Until Element Is Visible    ${HomePageMenuResetLink}    10s
+    Click Element    ${HomePageMenuResetLink}
+    Click Element    ${HomePageMenuCloseButton}
+
+Open Checkout test session
+    Go to Login Page
+    Login with credentials    ${CHECKOUT_TEST_DATA}[role]
+    Check if you went to the expected page    ${titleInventory}
+
+Prepare Checkout test case
+    Prepare HomePage test case
+    Check if you went to the expected page    ${titleInventory}
 
 Open cart page
     Click Element    ${CheckoutCartLink}

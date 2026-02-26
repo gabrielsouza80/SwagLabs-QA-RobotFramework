@@ -8,6 +8,12 @@ ${CredentialsJson}    ../Settings/credentials.json
 Login with credentials
     [Arguments]    ${role}
 
+    ${is_login_page}=    Run Keyword And Return Status    Page Should Contain Element    ${LOGIN_USERNAME_FIELD}
+    IF    not ${is_login_page}
+        Go To    ${URL}
+    END
+    Wait Until Element Is Visible    ${LOGIN_USERNAME_FIELD}    10s
+
     # Carrega o arquivo JSON contendo as credenciais
     ${credentials_json}=    Get File    ${CredentialsJson}
     ${credentials}=    Evaluate    json.loads(r'''${credentials_json}''')    modules=json
