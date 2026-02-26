@@ -39,7 +39,6 @@ Login with credentials
     Input Text    ${LOGIN_USERNAME_FIELD}    ${username}
     Input Text    ${LOGIN_PASSWORD_FIELD}    ${password}
     Click Button    ${LOGIN_BUTTON}
-    Wait Until Element Is Visible    ${titleInventory}    10s
 
 Check if you went to the expected page            
     [Arguments]    ${LocatorPageExpected}
