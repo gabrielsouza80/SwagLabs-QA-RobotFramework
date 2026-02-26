@@ -59,8 +59,9 @@ Login with invalid credentials
 Username and password with 255 characters
     [Documentation]    Gera username e password com 255 caracteres
     [Tags]    TC11
-    ${long_username}=    Evaluate    'a'*255
-    ${long_password}=    Evaluate    'b'*255
+    [Arguments]    ${length}=255
+    ${long_username}=    Evaluate    'a'*int(${length})
+    ${long_password}=    Evaluate    'b'*int(${length})
     RETURN    ${long_username}    ${long_password}
 
 Click Login

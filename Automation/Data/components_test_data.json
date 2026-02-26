@@ -1,0 +1,11 @@
+{
+  "role": "standard",
+  "expected_logo": "Swag Labs",
+  "expected_footer_text": "Sauce Labs. All Rights Reserved.",
+  "menu_items": [
+    "All Items",
+    "About",
+    "Logout",
+    "Reset App State"
+  ]
+}

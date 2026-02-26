@@ -1,0 +1,8 @@
+{
+  "role": "standard",
+  "expected_title": "Products",
+  "expected_logo": "Swag Labs",
+  "sort_za_value": "za",
+  "sort_za_label": "Name (Z to A)",
+  "expected_cart_badge": "2"
+}

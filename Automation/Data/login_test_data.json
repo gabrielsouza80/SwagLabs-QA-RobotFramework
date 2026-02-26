@@ -1,0 +1,18 @@
+{
+  "valid_role": "standard",
+  "locked_role": "Locked",
+  "problem_role": "problem",
+  "performance_role": "performance_problem",
+  "empty_value": "",
+  "invalid_username": "inexistent_user",
+  "standard_username": "standard_user",
+  "valid_password": "secret_sauce",
+  "wrong_password": "wrong_password",
+  "required_username_message": "Epic sadface: Username is required",
+  "required_password_message": "Epic sadface: Password is required",
+  "invalid_credentials_message": "Epic sadface: Username and password do not match any user in this service",
+  "locked_user_message": "Epic sadface: Sorry, this user has been locked out.",
+  "max_length": 255,
+  "invalid_attempts": 6,
+  "unauthorized_checkout_url": "https://www.saucedemo.com/checkout-step-one.html"
+}

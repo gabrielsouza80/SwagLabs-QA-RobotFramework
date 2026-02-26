@@ -1,0 +1,27 @@
+{
+  "role": "standard",
+  "customer": {
+    "first_name": "Gabriel",
+    "last_name": "Souza",
+    "postal_code": "01001000"
+  },
+  "expected_titles": {
+    "cart": "Your Cart",
+    "information": "Checkout: Your Information",
+    "overview": "Checkout: Overview",
+    "complete": "Checkout: Complete!"
+  },
+  "expected_items": [
+    "Sauce Labs Backpack",
+    "Sauce Labs Bike Light"
+  ],
+  "expected_totals": {
+    "item_total": "$39.98",
+    "tax": "$3.20",
+    "total": "$43.18"
+  },
+  "complete": {
+    "header": "Thank you for your order!",
+    "text_contains": "Your order has been dispatched"
+  }
+}
