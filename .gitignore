@@ -12,13 +12,6 @@ results/*.xml
 results/*.html
 results/*.txt
 
-# Generated result files (Automation scope)
-Automation/results/*.png
-Automation/results/*.xml
-Automation/results/*.html
-Automation/results/*.txt
-
 # Selenium screenshots created during failures
 selenium-screenshot-*.png
 results/selenium-screenshot-*.png
-Automation/results/selenium-screenshot-*.png

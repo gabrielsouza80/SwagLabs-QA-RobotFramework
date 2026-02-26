@@ -1,73 +1,66 @@
-# 🧪SauceDemo Test Automation & Documentation
+# SauceDemo QA Automation (Robot Framework)
 
-## 🌐 Project Overview | Visão Geral do Projeto
+Projeto de automação E2E para https://www.saucedemo.com/ com arquitetura organizada por domínio, testes orientados a dados (JSON) e execução sequencial/paralela.
 
-This project contains complete test documentation and automation for the site:  
-**https://www.saucedemo.com/**
+## Cobertura atual
 
-Este projeto contém a documentação completa de testes e automação para o site:  
-**https://www.saucedemo.com/**
+- Login: cenários positivos/negativos, campos obrigatórios, usuário bloqueado e proteção de rota.
+- HomePage: validação de componentes principais, menu lateral, ordenação e badge do carrinho.
+- Components: validação de logo, carrinho, menu lateral e footer.
+- Checkout: fluxo completo de carrinho, information, overview e finalização.
 
-We aim to provide a clear and structured testing process, from planning to execution.  
-Nosso objetivo é fornecer um processo de teste claro e estruturado, do planejamento à execução.
-
----
-
-## 🧠 Test Documentation | Documentação de Testes
-
-The documentation includes:  
-A documentação inclui:
-
-- 🗺️ **Mind Map** – Full overview of test coverage  
-  🗺️ **Mapa Mental** – Visão geral completa da cobertura de testes  
-- ✅ **Test Plan** – Objectives, scope, strategy, and resources  
-  ✅ **Plano de Testes** – Objetivos, escopo, estratégia e recursos  
-- 🧾 **Test Cases** – Detailed manual test cases  
-  🧾 **Casos de Teste** – Casos de teste manuais detalhados  
-- 📊 **Test Report** – Summary of results and metrics  
-  📊 **Relatório de Testes** – Resumo dos resultados e métricas
-
----
-
-## 🤖 Test Automation Roadmap | Roteiro da Automação de Testes
-
-1. **Robot Framework** – Keyword-driven testing  
-   **Robot Framework** – Testes baseados em palavras-chave
-
-Each phase will include:  
-Cada fase incluirá:
-
-- 🧪 Automated test scripts  
-  🧪 Scripts de testes automatizados  
-- 🔍 Validation against documentation  
-  🔍 Validação com base na documentação  
-- 📈 Execution reports  
-  📈 Relatórios de execução
-
-Current automated coverage includes:  
-Cobertura atual de automação inclui:
-
-- ✅ Login positive and negative scenarios (required fields, invalid credentials, locked user)  
-  ✅ Cenários positivos e negativos de login (campos obrigatórios, credenciais inválidas, usuário bloqueado)
-- ✅ Session and route protection validation (logout, unauthorized checkout access)  
-  ✅ Validação de sessão e proteção de rotas (logout, acesso indevido ao checkout)
-- ✅ Cart and checkout E2E flow (add items, cart badge, subtotal validation, purchase completion)  
-  ✅ Fluxo E2E de carrinho e checkout (adicionar itens, badge do carrinho, validação de subtotal e finalização da compra)
-- ✅ Inventory behavior validation (sorting A-Z)  
-  ✅ Validação de comportamento do inventário (ordenação A-Z)
-
----
-
-## 📁 Folder Structure | Estrutura de Pastas
+## Estrutura do projeto
 
 ```plaintext
-📂 documentation/
-│   ├── mind-map.png
-│   ├── test-plan.md
-│   ├── test-cases.xlsx
-│   └── test-report.pdf
+.
+├── Data/
+│   ├── checkout_test_data.json
+│   ├── components_test_data.json
+│   ├── homepage_test_data.json
+│   └── login_test_data.json
+├── Resources/
+│   ├── Base.resource
+│   ├── Pages/
+│   └── Settings/
+├── Test/
+│   ├── CheckoutPageTest.robot
+│   ├── ComponentsTest.robot
+│   ├── HomePageTest.robot
+│   └── LoginPageTest.robot
+├── results/
+├── requirements.txt
+└── README.md
+```
 
-📂 automation/
-│   └── robot-framework/
+## Instalação
 
-📄 README.md
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Execução dos testes
+
+Sequencial:
+
+```bash
+python -m robot -d results Test
+```
+
+Paralelo (5 processos):
+
+```bash
+python -m pabot --processes 5 --outputdir results Test
+```
+
+Paralelo (8 processos):
+
+```bash
+python -m pabot --processes 8 --outputdir results Test
+```
+
+## Boas práticas adotadas
+
+- Separação por domínio (Login, HomePage, Components e Checkout).
+- Dados de teste externalizados em `Data/*.json`.
+- Screenshot somente em falha para reduzir ruído e custo de I/O.
+- Um único diretório de artefatos: `results/`.
