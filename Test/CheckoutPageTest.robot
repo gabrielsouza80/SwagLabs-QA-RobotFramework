@@ -5,7 +5,7 @@ Test Setup                        Prepare Checkout test case
 Suite Teardown                    Close the login page
 
 *** Test Cases ***
-CK01 - Cart page loads with expected items
+TC01 - Cart page loads with expected items
     [Documentation]    Validates cart page structure and items
     [Tags]    checkout    cart
     ${expected_items}=    Set Variable    ${CHECKOUT_TEST_DATA}[expected_items]
@@ -14,14 +14,14 @@ CK01 - Cart page loads with expected items
     Validate cart page loaded    ${CHECKOUT_TEST_DATA}[expected_titles][cart]
     Validate cart contains expected items    @{expected_items}
 
-CK02 - Checkout information page loads correctly
+TC02 - Checkout information page loads correctly
     [Documentation]    Validates transition from cart to Checkout: Your Information
     [Tags]    checkout    info
     Prepare cart with two default items
     Open cart page
     Start checkout information step    ${CHECKOUT_TEST_DATA}[expected_titles][information]
 
-CK03 - Checkout overview validates subtotal, tax and total
+TC03 - Checkout overview validates subtotal, tax and total
     [Documentation]    Validates totals shown in overview
     [Tags]    checkout    overview    total
     ${customer}=    Set Variable    ${CHECKOUT_TEST_DATA}[customer]
@@ -33,7 +33,7 @@ CK03 - Checkout overview validates subtotal, tax and total
     Validate checkout overview loaded    ${CHECKOUT_TEST_DATA}[expected_titles][overview]
     Validate checkout totals    ${totals}[item_total]    ${totals}[tax]    ${totals}[total]
 
-CK04 - Checkout complete and return to products
+TC04 - Checkout complete and return to products
     [Documentation]    Completes the order and returns to HomePage
     [Tags]    checkout    complete
     ${customer}=    Set Variable    ${CHECKOUT_TEST_DATA}[customer]
